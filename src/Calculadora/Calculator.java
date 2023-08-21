@@ -48,65 +48,49 @@ public class Calculator {
         String operation = scanner.next();
 
         switch (operation) {
-            case "A":
+            case "A" -> {
                 System.out.println("Ingrese la cantidad de números a sumar:");
                 len = scanner.nextInt();
-
                 inputNumbers = new double[len];
-
                 for (int i = 0; i < len; i++) {
                     System.out.println("Ingrese el número " + (i + 1) + ":");
                     inputNumbers[i] = scanner.nextDouble();
                 }
-
                 opResult = calculator.sum(inputNumbers);
                 System.out.println("La suma de los números ingresados es: " + opResult);
-                break;
-
-            case "B":
+            }
+            case "B" -> {
                 System.out.println("Ingrese la cantidad de números a restar" +
                         "\nen el orden que quiere que sean restados:");
                 len = scanner.nextInt();
-
                 inputNumbers = new double[len];
-
                 for (int i = 0; i < len; i++) {
                     System.out.println("Ingrese el número " + (i + 1) + ":");
                     inputNumbers[i] = scanner.nextDouble();
                 }
-
                 opResult = calculator.substraction(inputNumbers);
                 System.out.println("La resta de los números ingresados es: " + opResult);
-                break;
-
-            case "C":
+            }
+            case "C" -> {
                 System.out.println("Ingrese la cantidad de números a multiplicar:");
                 len = scanner.nextInt();
-
                 inputNumbers = new double[len];
-
                 for (int i = 0; i < len; i++) {
                     System.out.println("Ingrese el número " + (i + 1) + ":");
                     inputNumbers[i] = scanner.nextDouble();
                 }
-
                 opResult = calculator.multiplication(inputNumbers);
                 System.out.println("La multiplicación de los números ingresados es: " + opResult);
-                break;
-
-            case "D":
+            }
+            case "D" -> {
                 System.out.println("Ingrese el valor del dividendo:");
                 double dividendInput = scanner.nextDouble();
                 System.out.println("Ingrese el valor del divisor:");
                 double divisorInput = scanner.nextDouble();
-
                 opResult = calculator.division(dividendInput, divisorInput);
                 System.out.println("La división de los números ingresados es: " + opResult);
-                break;
-
-            default:
-                System.out.println("No se ha ingresado una opción válida, vuelva a intentar");
-
+            }
+            default -> System.out.println("No se ha ingresado una opción válida, vuelva a intentar");
         }
     }
 }
